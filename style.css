@@ -1,0 +1,166 @@
+#title img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#title h1 {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #300038;
+    background-image: linear-gradient(45deg, #3052D1, #45149C);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+#title {
+    align-items: center;
+}
+
+#panel {
+    height: calc(100vh - 120px);
+    width: 100%;
+    white-space:nowrap;
+}
+
+#panel iframe {
+    vertical-align: middle;
+    height: 96%;
+    width: 49%;
+    background-color: #002149;
+    border-color: #004aa5;
+}
+
+button {
+    color: rgb(102, 196, 255);
+    background-color: #004aa5;
+    border-color: #004aa5;
+}
+
+body {
+    background: linear-gradient(#20004e, #002149);
+    background-repeat: no-repeat;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+html {
+    scrollbar-color: #9000ff #400084;
+    height: 100%;
+}
+
+h1 {
+    color: rgb(255, 0, 255);
+}
+
+#buttons {
+    position: fixed;
+    float: bottom;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(53, 77, 122, 0.086);
+    padding: 5px;
+}
+
+#copyright {
+    float: right;
+    color: #0053ad85;
+}
+
+#leftpad {
+    padding-left: 10px;
+    z-index: 1;
+    float: left;
+}
+
+#rightpad {
+    padding-right: 20px;
+    float: right;
+    z-index: 1;
+}
+
+div {
+    align-items: center;
+    align-content: center;
+}
+
+#warning {
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.318);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#warning b {
+    background-color: #300038;
+    background-image: linear-gradient(45deg, #96adff, #c6a5ff);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    box-shadow: rgba(255, 0, 0, 0.276);
+}
+
+#warning div {
+    background-color: rgba(0, 0, 0, 0.276);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#uidiv {
+    background-color: rgba(0, 0, 0, 0.276);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#file-popup {
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.318);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#file-popup b,input {
+    background-color: #300038;
+    background-image: linear-gradient(45deg, #96adff, #c6a5ff);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    box-shadow: rgba(255, 0, 0, 0.276);
+}
+
+#file-popup div {
+    background-color: rgba(0, 0, 0, 0.276);
+    padding: 10px;
+    border-radius: 10px;
+}

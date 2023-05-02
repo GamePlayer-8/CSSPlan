@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <title>CSS Input</title>
+        <meta name="icon" content="docs/icon.webp"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <link rel="stylesheet" href="docs/scroll.css"/>
+        <link rel="stylesheet" href="text.css"/>
+        <link rel="stylesheet" href="docs/viewport.css"/>
+        <link rel="icon" href="docs/icon.webp" type="image/x-icon"/>
+
+        <link href="prism-tomorrow.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <script type="text/javascript" src="prism.js"></script>
+        <textarea id="editing" placeholder="Type code here" spellcheck="false" onscroll="sync_scroll(this);" onclick="update(this.value); sync_scroll(this);" onkeydown="check_tab(this, event);" oninput="update(this.value); sync_scroll(this);"></textarea>
+        <pre id="highlighting" aria-hidden="true"><code placeholder="Type code here" class="language-css" id="highlighting-content"></code></pre>
+        <script type="text/javascript" src="text.js"></script>
+    </body>
+
+</html>

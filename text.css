@@ -1,0 +1,50 @@
+#editing, #highlighting {
+    /* Both elements need the same text and space styling so they are directly on top of each other */
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#editing, #highlighting, #highlighting * {
+    /* Also add text styles to highlighting tokens */
+    font-size: 10pt;
+    font-family: monospace;
+    line-height: 15pt;
+    tab-size: 2;
+    align-items: left;
+    text-align: left;
+    background-color: #002149;
+}
+
+#editing {
+    resize: none;
+}
+
+#editing, #highlighting {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 1px;
+}
+
+/* Move the textarea in front of the result */
+#editing {
+    z-index: 1;
+}
+
+#highlighting {
+    z-index: 0;
+}
+
+#editing {
+    color: transparent;
+    background: transparent;
+    caret-color: rgb(0, 255, 0); /* Or choose your favorite color */
+}
+
+#editing:focus {
+    outline: none !important;
+}

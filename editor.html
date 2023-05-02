@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <title>CSS Editor</title>
+        <meta name="icon" content="docs/icon.webp"/>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <link rel="stylesheet" href="docs/scroll.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="docs/viewport.css"/>
+        <link rel="icon" href="docs/icon.webp" type="image/x-icon"/>
+
+        <link href="prism-tomorrow.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <script src="prism.js"></script>
+        <div id="warning">
+            <div>
+                <b id="warning-text">Waiting for JavaScript...</b>
+            </div>
+        </div>
+        <div id="file-popup" style="display: none;">
+            <div>
+                <b>Please select a file:</b>
+                <hr style="color: #00000000;"/>
+                <input type="file" id="file-selector">
+                <button id="file-cancel" onclick="upload_cancel();">Cancel</button>
+            </div>
+        </div>
+        <div align="center" id="title">
+            <img src="docs/icon.svg" width="60" alt="CSSPlan icon." />
+            <h1>CSS Editor</h1>
+        </div>
+        
+        <div id="uidiv">
+            <div id="panel">
+                <iframe id="editor" src="text.html" scrolling="no"></iframe>
+                <iframe id="display"></iframe>
+            </div>
+        </div>
+        <div id="buttons">
+            <div id="leftpad">
+                <button id="save" onclick="save_css();">Save CSS</button>
+                <button id="load" onclick="load_css();">Load CSS</button>
+                <button id="hload" onclick="load_html();">Load HTML template</button>
+            </div>
+            <div id="rightpad">
+                <b id="copyright">Copyright 2023 Chimmie Firefly</b>
+            </div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>
