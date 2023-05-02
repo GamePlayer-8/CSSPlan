@@ -12,7 +12,7 @@
 
 #### Run
 
-Runtime is available under <a href="/editor.html"><i>editor</i></a>. Doesn't require backend to work rather than a HTTP server to serve content.
+Runtime is available under <a href="editor.html"><i>editor</i></a>. Doesn't require backend to work rather than a HTTP server to serve content.
 
 #### License
 
