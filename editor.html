@@ -24,8 +24,11 @@
         <div id="file-popup" style="display: none;">
             <div>
                 <b>Please select a file:</b>
-                <hr style="color: #00000000;"/>
-                <input type="file" id="file-selector">
+                <p/>
+                <label class="custom-file-upload">
+                    <input type="file" id="file-selector">
+                    Upload
+                </label>
                 <button id="file-cancel" onclick="upload_cancel();">Cancel</button>
             </div>
         </div>
@@ -36,7 +39,7 @@
         
         <div id="uidiv">
             <div id="panel">
-                <iframe id="editor" src="text.html" scrolling="no"></iframe>
+                <iframe id="editor" src="line-text.html" scrolling="no"></iframe>
                 <iframe id="display"></iframe>
             </div>
         </div>

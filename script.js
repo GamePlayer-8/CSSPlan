@@ -1,22 +1,34 @@
 document.getElementById('warning').remove();
 
+var popup = document.getElementById('file-popup');
+var css = document.getElementById('editor');
+var iframe = document.getElementById('display');
 var fileselectortype = 0;
+var editor;
+var text_editor;
+
+css.addEventListener( "load", function() {
+    text_editor = css.contentWindow.document.getElementById('editor');
+    editor = text_editor.contentWindow.document.getElementById('editing');
+    editor.onclick = function() {
+        sync_view();
+    }
+    editor.oninput = function() {
+        sync_view();
+    }
+});
 
 const fileSelector = document.getElementById('file-selector');
 fileSelector.addEventListener('change', (event) => {
     const fileList = event.target.files;
     if (fileselectortype == 0) {
-        var css = document.getElementById("editor");
-        var editor = css.contentWindow.document.getElementById("editing");
         var reader = new FileReader();
         reader.onload = function (e) {
             editor.value = e.target.result;
+            sync_view();
         }
         reader.readAsText(fileList[0]);
-
-        editor.click();
     } else if (fileselectortype == 1) {
-        var iframe = document.getElementById('display');
         var reader = new FileReader();
         reader.onload = function (e) {
             if (iframe.src !== undefined) {
@@ -28,16 +40,18 @@ fileSelector.addEventListener('change', (event) => {
         }
         reader.readAsText(fileList[0]);
     }
-    var popup = document.getElementById('file-popup');
     popup.style.display = "none";
 });
 
-function save_css() {
-    var css = document.getElementById("editor");
-    var editor = css.contentWindow.document.getElementById("editing");
-    var content = editor.value;
+function sync_view() {
+    update_css();
+    css.contentWindow.update_css();
+    text_editor.contentWindow.sync_scroll(editor);
+    text_editor.contentWindow.update(editor.value);
+}
 
-    var data = new Blob([content], {type: 'text/plain'});
+function save_css() {
+    var data = new Blob([editor.value], {type: 'text/plain'});
 
     var link = window.URL.createObjectURL(data);
 
@@ -59,29 +73,28 @@ function save_css() {
 
 function load_css() {
     fileselectortype = 0;
-    var file_ask = document.getElementById('file-popup');
-    file_ask.style.display = "inline";
+    popup.style.display = "inline";
 }
 
 function upload_cancel() {
-    var file_ask = document.getElementById('file-popup');
-    file_ask.style.display = "none";
+    popup.style.display = "none";
 }
 
 function load_html() {
     fileselectortype = 1;
-    var file_ask = document.getElementById('file-popup');
-    file_ask.style.display = "inline";
+    popup.style.display = "inline";
 }
 
-function update_css() {   
-    var css = document.getElementById("editor");
-    var editor = css.contentWindow.document.getElementById("editing");
-    
+function update_css() { 
     var style = document.createElement('style');
 
     style.textContent = editor.value;
+    style.id = 'EDITORCSSENGINEstyle';
 
-    var iframe = document.getElementById('display');
+    var element = iframe.contentWindow.document.getElementById('EDITORCSSENGINEstyle');
+    if (element !== null) {
+        element.remove();
+    }
+
     iframe.contentWindow.document.head.appendChild(style);
 }

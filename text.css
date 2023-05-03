@@ -7,15 +7,23 @@
     width: 100%;
 }
 
+body {
+    overflow: hidden;
+    height: 100%;
+    background-color: #002149;
+}
+
 #editing, #highlighting, #highlighting * {
     /* Also add text styles to highlighting tokens */
+    max-width: 100%;
     font-size: 10pt;
     font-family: monospace;
     line-height: 15pt;
-    tab-size: 2;
+    tab-size: 4;
     align-items: left;
     text-align: left;
     background-color: #002149;
+    white-space: pre;
 }
 
 #editing {

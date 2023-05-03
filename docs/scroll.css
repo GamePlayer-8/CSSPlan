@@ -1,19 +1,19 @@
 /* width */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: linear-gradient(#400084, #480094);
+    background: rgba(35, 59, 87, 0.464);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#78009d92, #9000ff);
+    background: rgba(51, 51, 145, 0.524);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(#9e00cf92, #6600b4);
+    background: rgba(58, 117, 154, 0.756);
 }
