@@ -8,7 +8,31 @@ function update(text) {
         text += " "; // Add a placeholder space character to the final line 
     }
     // Update code
-    hc.innerText = text;
+    hc.innerHTML = text.replace(
+        "<", 
+        "&#60;"
+    ).replace(
+        "(", 
+        "&#40;"
+    ).replace(
+        ")", 
+        "&#41;"
+    ).replace(
+        "+", 
+        "&#43;"
+    ).replace(
+        "-",
+        "&#45;"
+    ).replace(
+        ">",
+        "&#62;"
+    ).replace(
+        "{",
+        "&#123;"
+    ).replace(
+        "}",
+        "&#125;"
+    );
     // Syntax Highlight
     Prism.highlightElement(hc);
 }
