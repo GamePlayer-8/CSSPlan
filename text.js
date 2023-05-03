@@ -8,7 +8,7 @@ function update(text) {
         text += " "; // Add a placeholder space character to the final line 
     }
     // Update code
-    hc.innerHTML = text; /* Global RegExp */
+    hc.innerText = text;
     // Syntax Highlight
     Prism.highlightElement(hc);
 }
